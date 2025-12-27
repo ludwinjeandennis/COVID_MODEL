@@ -1,0 +1,16 @@
+# Modelos y datos grandes
+*.pth
+*.pkl
+*.h5
+*.pt
+__pycache__/
+*.py[cod]
+*.so
+.Python
+.env
+.venv
+venv/
+.streamlit/
+.DS_Store
+Thumbs.db
+*.log
