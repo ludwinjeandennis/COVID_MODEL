@@ -3,17 +3,12 @@ services:
     name: covid-detector
     env: python
     plan: free
-    buildCommand: |
-      pip install --upgrade pip setuptools wheel
-      pip cache purge
-      pip install --no-cache-dir -r requirements.txt
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
     startCommand: streamlit run app.py --server.address=0.0.0.0 --server.port=$PORT
     envVars:
       - key: PYTHONUNBUFFERED
         value: true
-      - key: STREAMLIT_SERVER_HEADLESS
-        value: true
     disk:
-      name: models-storage
+      name: models
       mountPath: /opt/render/project/src/models
       sizeGB: 3
